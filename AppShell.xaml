@@ -1,0 +1,43 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Memio.View"
+       x:Class="Memio.AppShell"
+       FlyoutBehavior="Flyout"
+       FlyoutWidth="280"
+       FlyoutBackgroundColor="#FDFBF7">
+
+    <Shell.Resources>
+        <Style TargetType="FlyoutItem">
+            <Setter Property="Shell.BackgroundColor" Value="Transparent" />
+            <Setter Property="Shell.ForegroundColor" Value="#4A403A" />
+        </Style>
+    </Shell.Resources>
+
+    <!-- HEADER (Текст замість картинки для безпеки) -->
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="30,40,30,20" Spacing="15" BackgroundColor="#FDFBF7">
+            <Label Text="MEMIO" FontSize="28" FontAttributes="Bold" TextColor="#E69A8D" HorizontalOptions="Center"/>
+            <BoxView HeightRequest="1" Color="#DAC4B6" WidthRequest="150" HorizontalOptions="Center" Margin="0,10"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <!-- Основні пункти -->
+    <FlyoutItem Title="Dashboard">
+        <ShellContent ContentTemplate="{DataTemplate views:DashboardPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="My Board">
+        <ShellContent ContentTemplate="{DataTemplate views:BoardPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Calendar">
+        <ShellContent ContentTemplate="{DataTemplate views:CalendarPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Settings">
+        <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="➕ Create New Board" Clicked="OnCreateBoardClicked" />
+
+</Shell>

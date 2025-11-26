@@ -1,0 +1,34 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Memio.Model"
+             x:Class="Memio.View.TaskDetailPage"
+             Title="Edit Task"
+             BackgroundColor="#FDFBF7">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="Edit Task" FontSize="24" FontAttributes="Bold" TextColor="#4A403A"/>
+
+        <!-- Назва -->
+        <Border StrokeShape="RoundRectangle 10" Padding="10" BackgroundColor="White" StrokeThickness="0">
+            <Entry Text="{Binding Title}" Placeholder="Task Title" FontSize="18" FontAttributes="Bold"/>
+        </Border>
+
+        <!-- Опис -->
+        <Border StrokeShape="RoundRectangle 10" Padding="10" BackgroundColor="White" StrokeThickness="0" HeightRequest="150">
+            <Editor Text="{Binding Description}" Placeholder="Description..." AutoSize="TextChanges"/>
+        </Border>
+
+        <!-- Дата -->
+        <Label Text="Due Date" FontAttributes="Bold" TextColor="#9C9086"/>
+        <DatePicker Date="{Binding DueDate}" MinimumDate="01/01/2023" BackgroundColor="White" TextColor="#4A403A"/>
+
+        <!-- Кнопка Зберегти (Назад) -->
+        <Button Text="Save &amp; Back" 
+                Clicked="OnSaveClicked"
+                BackgroundColor="#E69A8D" 
+                TextColor="White" 
+                CornerRadius="25" 
+                HeightRequest="50"
+                Margin="0,20,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

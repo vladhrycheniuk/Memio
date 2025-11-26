@@ -1,0 +1,23 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Memio.View.SettingsPage"
+             Title="Settings"
+             BackgroundColor="#FDFBF7">
+    <VerticalStackLayout Padding="30" Spacing="25">
+        <Label Text="Appearance" FontSize="22" FontAttributes="Bold" TextColor="#4A403A"/>
+        
+        <Label Text="Choose Board Background:" TextColor="#9C9086"/>
+        
+        <HorizontalStackLayout Spacing="15">
+            <Button BackgroundColor="#FDFBF7" BorderColor="#E69A8D" BorderWidth="2" HeightRequest="50" WidthRequest="50" CornerRadius="25" Clicked="OnColorClicked" CommandParameter="#FDFBF7"/>
+            <Button BackgroundColor="#E3F2FD" HeightRequest="50" WidthRequest="50" CornerRadius="25" Clicked="OnColorClicked" CommandParameter="#E3F2FD"/>
+            <Button BackgroundColor="#F1F8E9" HeightRequest="50" WidthRequest="50" CornerRadius="25" Clicked="OnColorClicked" CommandParameter="#F1F8E9"/>
+            <Button BackgroundColor="#FFF3E0" HeightRequest="50" WidthRequest="50" CornerRadius="25" Clicked="OnColorClicked" CommandParameter="#FFF3E0"/>
+        </HorizontalStackLayout>
+
+        <BoxView HeightRequest="1" Color="#DAC4B6" Margin="0,10"/>
+
+        <Label Text="App Info" FontSize="22" FontAttributes="Bold" TextColor="#4A403A"/>
+        <Label Text="Memio Beta 1.0" TextColor="#9C9086"/>
+    </VerticalStackLayout>
+</ContentPage>

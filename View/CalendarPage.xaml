@@ -1,0 +1,36 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Memio.ViewModel"
+             x:Class="Memio.View.CalendarPage"
+             Title="Schedule"
+             BackgroundColor="{StaticResource BgColor}">
+
+    <Grid RowDefinitions="Auto, *" Padding="20">
+        <Label Text="Schedule" FontSize="28" FontAttributes="Bold"/>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding TasksByDate}" IsGrouped="True" Margin="0,20,0,0">
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding DateHeader}" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource PrimaryColor}" 
+                           Padding="0,15,0,5"/>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource CardStyle}" Margin="0,0,0,10">
+                        <Grid ColumnDefinitions="Auto, *">
+                            <BoxView Color="{Binding TagColor}" WidthRequest="5" VerticalOptions="Fill" Margin="-15,-15,10,-15"/>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding Title}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Description}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
